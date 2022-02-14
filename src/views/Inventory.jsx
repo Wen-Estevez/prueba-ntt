@@ -7,7 +7,7 @@ import { getInventory } from "../services/getInfo";
 
 const Container = styled.div`    
     background: url(${fondo}) no-repeat;
-    height: 100vh;
+    height: 89vh;
     width: 100%;
     padding-top: 5%;
     display:grid;
@@ -20,16 +20,21 @@ const ContValue = styled.div`
     grid-column: 2 / 2;
 `;
 const Value = styled.h5`
-
+    margin:0px;
+    font-size: 20px;
+    color: #417048;
 `;
 
 const Title = styled.h2`
-
+    margin:0px;
+    font-size: 20px;
+    margin-left: 25%;
+    color: #25492a;
 `;
 
 const MenuButton = styled.button`
     background: #fff;
-    color: #417048;
+    color: #25492a;
     border: none;
     border-radius: 8px;
     padding: 5px;
