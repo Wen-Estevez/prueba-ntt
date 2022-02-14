@@ -7,7 +7,7 @@ import { getInventory } from "../services/getInfo";
 
 const Container = styled.div`    
     background: url(${fondo}) no-repeat;
-    height: 89vh;
+    height: 100vh;
     width: 100%;
     padding-top: 5%;
     display:grid;
