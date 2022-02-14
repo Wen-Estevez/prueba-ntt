@@ -7,7 +7,7 @@ const INITIAL_STATE = {             //Inicializa los productos
         {
             id: 1,
             name: "Computador",
-            description: "Portatil Asus i7",
+            description: "Portatil Asus Corei7 ",
             price:"$2.000.000",
             stock: 20,
             sold:0, 

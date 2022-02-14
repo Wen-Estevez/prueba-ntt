@@ -1,13 +1,24 @@
 import { useEffect,useState } from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import fondo from '../assets/fondo.jpg';
 
 import { getInventory } from "../services/getInfo";
 
-const Container = styled.div`
-
+const Container = styled.div`    
+    background: url(${fondo}) no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding-top: 5%;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
 `;
-
+const ContTittle = styled.div`
+    grid-column: 1 / 1;
+`;
+const ContValue = styled.div`
+    grid-column: 2 / 2;
+`;
 const Value = styled.h5`
 
 `;
@@ -17,7 +28,11 @@ const Title = styled.h2`
 `;
 
 const MenuButton = styled.button`
-
+    background: #fff;
+    color: #417048;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
 `;
 
 const MenuL = styled(Link)`      //Estilo link
@@ -57,9 +72,12 @@ export default function Inventory() {
             <MenuL to="/">
                 <MenuButton>Volver</MenuButton>
             </MenuL>
-            {properties?.map((property) =>  <Title key={i++}>{property}</Title> )}
-            {values?.map((value) => <Value key={i++}>{value}</Value>)}
-            
+            <ContTittle>
+                {properties?.map((property) =>  <Title key={i++}>{property}</Title> )}
+            </ContTittle>
+            <ContValue>
+                {values?.map((value) => <Value key={i++}>{value}</Value>)}
+            </ContValue>
         </Container>
     )
 }
