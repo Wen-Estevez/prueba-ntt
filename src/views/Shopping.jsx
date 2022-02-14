@@ -1,15 +1,27 @@
 import { useSelector,useDispatch } from "react-redux";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import fondo from '../assets/fondo.jpg';
 
 import { sellProduct } from "../stateManagement/actions/shoppingActions";
 
 const Container = styled.div`
-
+    background: url(${fondo}) no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding-top: 12%;
 `;
 
 const Cards = styled.div`
-
+    width: 180px;
+    height: 200px;
+    margin: 22px;
+    margin-left: 5%;
+    border: 1px solid #2A5230;
+    color: #2A5230;
+    border-radius: 12px;
+    font-size: 20px;
+    font-family:'century gothic';
 `;
 
 const Name = styled.h4`
@@ -55,10 +67,10 @@ export default function Shopping() {
             </MenuL>
             {products.map((product) =>
                 <Cards key={product.id}>
-                    <Name>{product.name}</Name>
-                    <Description>{product.description}</Description>
-                    <Price>{product.price}</Price>
-                    <Stock>{product.stock}</Stock>
+                    <Name>{product.name}</Name><br></br>
+                    <Description>{product.description}</Description><br></br>
+                    <Price>Precio: {product.price}</Price><br></br>
+                    <Stock>Cantidad: {product.stock}</Stock>
                     <BuyButton onClick={()=>handleButton(product.id)}>Comprar</BuyButton>
                 </Cards>
             )}
